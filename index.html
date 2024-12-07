@@ -22,7 +22,9 @@
 
     header {
         height: 100vh;
-        background: linear-gradient(to right, #00438a, #0084a8);
+        background-image: url(images/pexels-fauxels-3183150-1024x683.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
         color: white;
         display: flex;
         flex-direction: column;
@@ -236,6 +238,44 @@
         .contact img{
             width: 100px;
         }
+        /* Keyframes for sliding animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to the testimonials */
+.testimonial {
+    opacity: 0;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Delay the animation for each testimonial */
+.testimonial:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.testimonial:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.testimonial:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.testimonial:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.slide-in {
+    animation: slideIn 1s ease-in-out forwards;
+}
+
 </style>
 
 <body>
@@ -249,7 +289,7 @@
         <a href="#about">About Us</a>
         <a href="#projects">Our Services</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="#Meet">Meet our team</a>
+        <a href="#meet">Meet our team</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -361,11 +401,10 @@
         <h2>Our Team</h2>
         <div class="testimonial">
             <img src="images/Screenshot_20240624-185050.jpg" alt="Client 3">
-            <p>Cedar plagiarism checker has been an invaluable tool in my academic journey. Its accuracy and efficiency
-                helped me ensure the originality of my MSc project. I highly recommend Cedar to anyone seeking a
-                reliable plagiarism detection solution. Thank you, Cedar, for your excellent service!</p>
+            <h4>Favour Bamigboye (Ph.D in-view)
 
-            <h4>– Michael Brown</h4>
+C.E.O.
+Biomedical Scientist and Bio-informatician.</h4>
         </div>
     </section>
     <section id="contact" class="contact">
@@ -376,3 +415,25 @@
 </body>
 
 </html>
+<script>
+    // JavaScript to trigger animation on scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const testimonials = document.querySelectorAll('.testimonial');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1; // Make visible
+                entry.target.classList.add('slide-in'); // Add animation class
+                observer.unobserve(entry.target); // Stop observing after animation
+            }
+        });
+    }, {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+    });
+
+    testimonials.forEach(testimonial => {
+        observer.observe(testimonial);
+    });
+});
+
+</script>
