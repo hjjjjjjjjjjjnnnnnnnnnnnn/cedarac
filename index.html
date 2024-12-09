@@ -34,22 +34,34 @@
     }
 
     header h1 {
-        font-size: 3rem;
+        font-size: 100px;
         margin-bottom: 10px;
+        background-color: #00438a8c;
     }
 
     header p {
-        font-size: 1rem;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 500;
+        color: white;
+
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
     }
 
     nav {
         position: fixed;
+        /* display: flex; */
         top: 0;
         left: 0;
         width: 100%;
         background: rgba(1, 103, 212, 0.9);
         padding: 10px 0;
-        text-align: center;
+        /* text-align: center; */
+        /* align-items: center; */
         z-index: 10;
     }
 
@@ -69,15 +81,18 @@
     .about {
         padding: 50px 20px;
         text-align: center;
-        background-image: url(images/GettyImages-1353372066\ \(1\).webp);
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: linear-gradient(to right, #007bff, #00c6ff);
+        background-image: url('images/blue\ back.jpg'),
+            linear-gradient(to right, #007bff, #00c6ff);
+        background-repeat: repeat, no-repeat;
+        background-size: auto, cover;
+        color: #f4f4f9;
     }
 
     .about h2 {
         font-size: 2.5rem;
         margin-bottom: 20px;
-        color: #007bff;
+        color: #f4f4f9;
     }
 
     .about p {
@@ -85,7 +100,7 @@
         margin: 0 auto;
         font-size: 1.2rem;
         line-height: 1.8;
-        color: #f4f4f9;
+        color: #ffffff;
     }
 
     /* Projects Section */
@@ -180,7 +195,7 @@
         height: 80px;
         border-radius: 50%;
         margin-bottom: 15px;
-        
+
     }
 
     .testimonial p {
@@ -195,6 +210,7 @@
         font-weight: bold;
         color: #222;
     }
+
     .testimonials {
         display: flex;
         flex-wrap: wrap;
@@ -206,74 +222,257 @@
         padding: 50px 20px;
         background: linear-gradient(to right, #007bff, #00c6ff);
        
+
     }
- 
+
     .meet h2 {
         font-size: 2.5rem;
         margin-bottom: 20px;
-        color: #00c6ff;
+        color: #ffffff;
         text-align: center;
     }
+    
+    .cardte {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .testimonia {
+        background: #002064;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 300px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    .testimonia:hover {
+        transform: translateY(-10px);
+    }
+
+    .testimonia img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+
+    }
+
+    .testimonia p {
+        font-style: italic;
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .testimonia h4 {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff9f9;
+    }
+
     .contact {
-            padding: 50px 20px;
-            background-color: #00438a;
-            color: white;
-            text-align: center;
+        padding: 50px 20px;
+        background-color: #00438a;
+        color: white;
+        text-align: center;
+    }
+
+    .contact h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .contact p {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .contact a {
+        color: #ffdd40;
+        text-decoration: none;
+    }
+
+    .contact a:hover {
+        text-decoration: underline;
+    }
+
+    .contact img {
+        width: 100px;
+    }
+
+    .vl {
+        border-left: 3px solid rgb(0, 55, 128);
+        height: 25px;
+    }
+
+    /* Keyframes for sliding animation */
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(100px);
         }
-        .contact h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .contact p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-        .contact a {
-            color: #ffdd40;
-            text-decoration: none;
-        }
-        .contact a:hover {
-            text-decoration: underline;
-        }
-        .contact img{
-            width: 100px;
-        }
-        /* Keyframes for sliding animation */
-@keyframes slideIn {
-    from {
+    }
+
+    /* Apply animation to the testimonials */
+    .testimonial {
         opacity: 0;
-        transform: translateY(100px);
+        animation: slideIn 1s ease-in-out forwards;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    /* Delay the animation for each testimonial */
+    .testimonial:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .testimonial:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    .testimonial:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+
+    .testimonial:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+
+    .slide-in {
+        animation: slideIn 1s ease-in-out forwards;
+    }
+    /* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 50px;
+        padding: 0 10px;
+    }
+
+    header p {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .about h2,
+    .projects h2,
+    .testimonial-section h2,
+    .meet h2,
+    .contact h2 {
+        font-size: 1.8rem;
+    }
+
+    .about p,
+    .projects p,
+    .testimonial p,
+    .contact p {
+        font-size: 1rem;
+    }
+
+    .project {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .testimonials,
+    .cardte {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .testimonial,
+    .testimonia {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .testimonial img,
+    .testimonia img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .testimonial p,
+    .testimonia p {
+        font-size: 0.9rem;
+    }
+
+    .testimonial h4,
+    .testimonia h4 {
+        font-size: 1rem;
+    }
+
+    .contact img {
+        width: 70px;
     }
 }
 
-/* Apply animation to the testimonials */
-.testimonial {
-    opacity: 0;
-    animation: slideIn 1s ease-in-out forwards;
-}
+@media (max-width: 480px) {
+    nav {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
 
-/* Delay the animation for each testimonial */
-.testimonial:nth-child(1) {
-    animation-delay: 0.2s;
-}
+    nav a {
+        font-size: 0.9rem;
+    }
 
-.testimonial:nth-child(2) {
-    animation-delay: 0.4s;
-}
+    header h1 {
+        font-size: 40px;
+    }
 
-.testimonial:nth-child(3) {
-    animation-delay: 0.6s;
-}
+    header p {
+        font-size: 14px;
+    }
 
-.testimonial:nth-child(4) {
-    animation-delay: 0.8s;
-}
-.slide-in {
-    animation: slideIn 1s ease-in-out forwards;
+    .about p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .project h3 {
+        font-size: 1.2rem;
+    }
+
+    .project p {
+        font-size: 0.9rem;
+    }
+
+    .testimonial p,
+    .testimonia p {
+        font-size: 0.8rem;
+    }
+
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact p {
+        font-size: 0.9rem;
+    }
+
+    .contact a {
+        font-size: 0.9rem;
+    }
 }
 
 </style>
@@ -281,16 +480,25 @@
 <body>
     <!-- header -->
     <header>
-        <h1>Welcome to Cedar Academy Services</h1>
+        <h1>Cedar Academy Services</h1>
         <p>Language Editing | Thesis Assistance | Plagiarism Services | Bioinformatics & Statistical Analysis</p>
     </header>
     <!-- nav -->
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#projects">Our Services</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#meet">Meet our team</a>
-        <a href="#contact">Contact</a>
+        <div class="navbar">
+            <a href="#about">About </a>
+            <div class="vl"></div>
+            <a href="#projects">Services</a>
+            <div class="vl"></div>
+            <a href="#testimonials">Testimonials</a>
+            <div class="vl"></div>
+            <a href="#meet">Team</a>
+            <div class="vl"></div>
+            <a href="#contact">Contact</a>
+            <div class="vl"></div>
+            <a href="article.html">Article</a>
+        </div>
+
     </nav>
 
 
@@ -300,20 +508,24 @@
 
         <!-- <img src="images/GettyImages-1353372066 (1).webp" alt=""> -->
         <p>
-            Cedar Academic Services is an academic and research services organization registered with the government of
-            Nigeria with SMEDAN
-            registration number; SUIN385659372697.
+            Cedar Academic Services is an academic and research services organization.
             While CedarAcad started formally in 2023, work started in 2020 with freelance
-            scientific writing, editing and data analysis.
-            The focus of this organization are disciplines in Life Sciences, Health, and Medical
+            scientific writing, editing and bioinformatics analysis.
+            The focus of this organization are disciplines in Social, Life, and Medical
             Sciences. With working partners and mentors across many disciplines, we offer
-            various services including research assistance, scientific writing and editing,
-            biostatistical data analysis.
+            various services including research assistance, scientific writing and editing, statistical and
+            bioinformatics analysis.
         </p>
     </section>
     <section id="projects" class="projects">
         <h2>Our Services</h2>
         <div class="project-grid">
+            <div class="project">
+                <img src="images/bio.jpg" alt="Project 3">
+                <h3>Bio-informatics: </h3>
+                <p>We carry out whole genome sequence and metagenomics analysis for students and researchers interested
+                    in microbiome studies and microbial ecology</p>
+            </div>
             <div class="project">
                 <img src="images/scientific-editing-service.jpg" alt="Project 1">
                 <h3>Scientific writing and editing services: </h3>
@@ -351,6 +563,7 @@
                 <p>We offer resources and guidance on avoiding
                     plagiarism, proper citation, and academic honesty.</p>
             </div>
+
         </div>
     </section>
     <section id="testimonials" class="testimonials">
@@ -359,11 +572,14 @@
             <div class="testimonials">
                 <div class="testimonial">
                     <img src="images/WhatsApp Image 2024-12-07 at 3.53.47 PM.jpeg" alt="Client 1">
-                    <p>I had a terrible research encounter with my Thesis work that almost led to quitting. Towards the
-                        brim of quitting, a colleague at work linked me with Cedar Academic Services'. This terminated
-                        the plague as the plagiarism check and editing services bailed me out. Their team assisted me
-                        beyond measure. Infact, I got more than what I requested for.</p>
-                    <h4>Oladimeji Ojo, MSc student, University of Ilorin</h4>
+                    <p>Cedar Academic Services was a breakthrough in my PhD biochemistry thesis defense. Their
+                        meticulous plagiarism checks ensured my work was original and polished, while their expert
+                        language refinement brought clarity and professionalism to my thesis. Affordable, reliable, and
+                        always available, they provided the support I needed during a critical time. Their dedication
+                        and expertise were truly instrumental to my success, and I highly recommend their services to
+                        any scholar seeking excellence.
+                    </p>
+                    <h4>Dr. E.O. Olopade - Adeleke University, Ede.</h4>
                 </div>
                 <div class="testimonial">
                     <img src="images/WhatsApp Image 2024-12-07 at 3.53.48 PM.jpeg" alt="Client 2">
@@ -375,16 +591,15 @@
                     </h4>
                 </div>
                 <div class="testimonial">
-                    <img src="images/WhatsApp Image 2024-12-07 at 3.53.49 PM.jpeg" alt="Client 3">
-                    <p>Cedar plagiarism checker has been an invaluable tool in my academic journey. Its accuracy and
-                        efficiency helped me ensure the originality of my MSc project. I highly recommend Cedar to
-                        anyone seeking a reliable plagiarism detection solution. Thank you, Cedar, for your excellent
-                        service!</p>
-
-                    <h4>– Michael Brown</h4>
+                    <img src="images/WhatsApp Image 2024-12-07 at 4.20.03 PM.jpeg" alt="Client 3">
+                    <p>I had a terrible research encounter with my Thesis work that almost led to quitting. Towards the
+                        brim of quitting, a colleague at work linked me with Cedar Academic Services'. This terminated
+                        the plague as the plagiarism check and editing services bailed me out. Their team assisted me
+                        beyond measure. Infact, I got more than what I requested for.</p>
+                    <h4>Oladimeji Ojo, MSc student, University of Ilorin</h4>
                 </div>
                 <div class="testimonial">
-                    <img src="images/WhatsApp Image 2024-12-07 at 4.20.03 PM.jpeg" alt="Client 3">
+                    <img src="images/WhatsApp Image 2024-12-07 at 3.53.49 PM.jpeg" alt="Client 3">
 
                     <p>"I've found Cedar Academic Services' plagiarism checker to be a game-changer in my academic
                         pursuits. Its exceptional accuracy and efficiency ensured the originality of my MSc project,
@@ -393,47 +608,90 @@
                         invaluable!</p>
                     <h4> Makinde Ayoade Bright, Ph.D. Student, Adeleke University, Ede.</h4>
                 </div>
+                <div class="testimonial">
+                    <img src="images/Tomisin6.jpg" alt="Client 3">
+
+                    <p>"I am incredibly grateful to Cedar Academic Services for their outstanding support with my
+                        metagenomic analysis. Their bioinformatics team delivered precise, high-quality interpretations
+                        that greatly enhanced the impact of my research. Their professionalism and attention to detail
+                        were instrumental in achieving the completion of my PhD thesis ."</p>
+                    <h4> Oluwatomisin Akinsola. Bowen University, Iwo</h4>
+                </div>
+                <div class="testimonial">
+                    <img src="images/al.jpg" alt="Client 3">
+
+                    <p>When it comes to similarity reportage, editorial certification, eagle scanning or fine tuning of
+                        your research work, cedar academic services gives cutting edge touch to your work. This is to
+                        say the least.</p>
+                    <h4>Dr. Sanni Abdulquadri Isah
+                        Resident, Federal Medical Center, Owo.</h4>
+                </div>
             </div>
         </div>
 
     </section>
     <section id="meet" class="meet">
         <h2>Our Team</h2>
-        <div class="testimonial">
-            <img src="images/Screenshot_20240624-185050.jpg" alt="Client 3">
-            <h4>Favour Bamigboye (Ph.D in-view)
-
-C.E.O.
-Biomedical Scientist and Bio-informatician.</h4>
+        <div class="cardte">
+            <div class="testimonia">
+                <img src="images/Screenshot_20240624-185050.jpg" alt="Client 3">
+                <h4>
+                    C.E.O.
+                    <br>
+                    Favour Bamigboye 
+                    <br>
+                    Bio-informatician and Biomedical Scientist.</h4>
+            </div>
+            <div class="testimonia">
+                <img src="images/team2.jpg" alt="Client 3">
+                <h4>
+                    C.O.O.
+                    <br>
+                    Oluwaseyi Eko
+                    <br>
+                    Biomedical Scientist and Business Administrator.</h4>
+            </div>
+            <div class="testimonia">
+                <img src="images/team1.jpg" alt="Client 3">
+                <h4>
+                    Head, Statistical Analysis
+                    <br>
+                    Isaac Olowookere
+                    <br>
+                    Data Analyst.</h4>
+            </div>
+            
         </div>
+       
     </section>
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:favourbamigboye1@gmail.com">favourbamigboye1@gmail.com</a></p>
-     <p>Contact us on Whatsapp:</p>   <a href="https://wa.link/6a1cwo"><img src="images/whatt-removebg-preview.png" alt=""></a>
+        <p>Email: <a href="mailto:cedaracads@gmail.com">cedaracads@gmail.com</a></p>
+        <p>Contact us on Whatsapp:</p> <a href="https://wa.link/6a1cwo"><img src="images/whatt-removebg-preview.png"
+                alt=""></a>
     </section>
 </body>
 
 </html>
 <script>
     // JavaScript to trigger animation on scroll
-document.addEventListener("DOMContentLoaded", () => {
-    const testimonials = document.querySelectorAll('.testimonial');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1; // Make visible
-                entry.target.classList.add('slide-in'); // Add animation class
-                observer.unobserve(entry.target); // Stop observing after animation
-            }
+    document.addEventListener("DOMContentLoaded", () => {
+        const testimonials = document.querySelectorAll('.testimonial');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1; // Make visible
+                    entry.target.classList.add('slide-in'); // Add animation class
+                    observer.unobserve(entry.target); // Stop observing after animation
+                }
+            });
+        }, {
+            threshold: 0.2, // Trigger when 20% of the section is visible
         });
-    }, {
-        threshold: 0.2, // Trigger when 20% of the section is visible
-    });
 
-    testimonials.forEach(testimonial => {
-        observer.observe(testimonial);
+        testimonials.forEach(testimonial => {
+            observer.observe(testimonial);
+        });
     });
-});
 
 </script>
